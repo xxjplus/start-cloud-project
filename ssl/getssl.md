@@ -33,7 +33,7 @@ nslookup -type=txt  _acme-challenge.xjplus.xyz
 #9 view the certificates
 ll .getssl/\*.xjplus.xyz/
 #10 copy to local host
-docker cp bc79eaa05ff2:/root/.getssl/\*.xjplus.xyz/ ~/Downloads.getssl/
+docker cp bc79eaa05ff2:/root/.getssl/\*.xjplus.xyz/ ~/Downloads/
 ```
 
 ##### The screenshot
