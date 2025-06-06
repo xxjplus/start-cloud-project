@@ -18,6 +18,7 @@ getssl --help
 #4 configure getssl & change the config
 getssl -c "*.xjplus.xyz"
 vim .getssl/\*.xjplus.xyz/getssl.cfg
+    CA="https://acme-v02.api.letsencrypt.org"
     SANS="xjplus.xyz"
     VALIDATE_VIA_DNS="true"
     USE_SINGLE_ACL="true"
