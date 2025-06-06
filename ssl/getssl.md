@@ -34,6 +34,11 @@ nslookup -type=txt  _acme-challenge.xjplus.xyz
 ll .getssl/\*.xjplus.xyz/
 #10 copy to local host
 docker cp bc79eaa05ff2:/root/.getssl/\*.xjplus.xyz/ ~/Downloads/
+
+#11 aws 上传证书
+*.xjplus.xyz.crt
+*.xjplus.xyz.key
+fullchain.crt
 ```
 
 ##### The screenshot
