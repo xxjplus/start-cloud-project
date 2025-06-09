@@ -1,3 +1,28 @@
-stage("Test Qq") {
-  print("haha");
+pipeline {
+    agent any
+    // agent { label 'amz-linux' }
+    // required plugins
+    //      1. git
+    //      2. github
+    //      3. Pipeline: Stage ViewVersion
+    //      4. cross platform shell
+    stages {
+        stage('Stage Test1') {
+            steps {
+                echo 'Hello World'
+                sh 'pwd'
+                sh 'ls -l'
+            }
+        }
+        stage('Stage Test2') {
+            steps {
+                echo 'Hello World'
+                sh '''
+                pwd
+                ls -l
+                docker ps
+                '''
+            }
+        }
+    }
 }
