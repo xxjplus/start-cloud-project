@@ -1,11 +1,6 @@
-FROM alpine:3.20
+FROM alpine:3.21
 
-RUN apk add --no-cache \
-    bash \
-    curl \
-    jq \
-    python3 \
-    py3-pip \
-    && pip install --no-cache-dir awscli
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+RUN apk add --no-cache bash curl jq aws-cli
 
 CMD bash
