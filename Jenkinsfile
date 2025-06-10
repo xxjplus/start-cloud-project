@@ -12,17 +12,42 @@ pipeline {
                 echo 'Hello World'
                 sh 'pwd'
                 sh 'ls -l'
+
+                // scripting
+                script {
+                    currentBuild.displayName = "The displayName."
+                    currentBuild.description = "The description."
+                    def aaa = "aaa"
+                    echo aaa
+                }
             }
         }
-        stage('Stage Test2') {
+        stage('Stage Docker Build') {
             steps {
-                echo 'Hello World'
                 sh '''
                 pwd
                 ls -l
                 docker ps
+                docker build -t xjplus/local-test:${env.BUILD_NUMBER} .
                 '''
             }
+        }
+    }
+    post {
+        always {
+            echo 'always'
+        }
+        success {
+            echo 'success'
+        }
+        failure {
+            echo 'failure'
+        }
+        unstable {
+            echo 'unstable'
+        }
+        changed {
+            echo 'changed'
         }
     }
 }
