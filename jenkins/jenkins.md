@@ -70,3 +70,6 @@ npm --version
 https://github.com/jenkinsci/plugin-installation-manager-tool/releases/download/2.13.2/jenkins-plugin-manager-2.13.2.jar
 jenkins-plugin-cli --plugins scm-api:704.v3ce5c542825a_
 ```
+
+## Docker Permission
+usermod -aG docker jenkins
