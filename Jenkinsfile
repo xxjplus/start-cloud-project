@@ -28,7 +28,7 @@ pipeline {
                 pwd
                 ls -l
                 docker ps
-                docker build -t xjplus/local-test:${env.BUILD_NUMBER} .
+                docker build -t xjplus/local-test:$BUILD_NUMBER .
                 '''
             }
         }
